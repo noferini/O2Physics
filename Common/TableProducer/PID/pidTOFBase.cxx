@@ -230,8 +230,8 @@ struct tofEventTime {
         if (erret < errDiamond) {
           flags |= o2::aod::pidflags::enums::PIDFlags::EvTimeTOF;
         } else {
-           et = 0;
-           erret = errDiamond;
+          et = 0;
+          erret = errDiamond;
         }
         tableFlags(flags);
         tableEvTime(et, erret, evTimeTOF.mEventTimeMultiplicity);
@@ -316,7 +316,7 @@ struct tofEventTime {
           sumOfWeights += weight;
         }
 
-        if(sumOfWeights < weightDiamond) { // avoiding sumOfWeights = 0 or worse that diamond
+        if (sumOfWeights < weightDiamond) { // avoiding sumOfWeights = 0 or worse that diamond
           eventTime = 0;
           sumOfWeights = weightDiamond;
           tableFlags(0);
