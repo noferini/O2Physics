@@ -62,6 +62,11 @@ o2physics_add_dpl_workflow(histograms
                   PUBLIC_LINK_LIBRARIES O2::Framework
                   COMPONENT_NAME AnalysisTutorial)
 
+o2physics_add_dpl_workflow(mytask
+                  SOURCES src/mytask.cxx
+                  PUBLIC_LINK_LIBRARIES O2::Framework O2Physics::AnalysisCore O2::TOFBase
+                  COMPONENT_NAME AnalysisTutorial)
+
 o2physics_add_dpl_workflow(histograms-full-tracks
                   SOURCES src/histogramsFullTracks.cxx
                   PUBLIC_LINK_LIBRARIES O2::Framework

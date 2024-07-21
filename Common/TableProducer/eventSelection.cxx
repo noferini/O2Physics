@@ -203,7 +203,7 @@ struct BcSelectionTask {
       bcsel(alias, selection, foundFT0, foundFV0, foundFDD, foundZDC);
     }
   }
-  PROCESS_SWITCH(BcSelectionTask, processRun2, "Process Run2 event selection", true);
+  PROCESS_SWITCH(BcSelectionTask, processRun2, "Process Run2 event selection", false);
 
   void processRun3(BCsWithRun3Matchings const& bcs,
                    aod::Zdcs const&,
@@ -546,7 +546,7 @@ struct EventSelectionTask {
 
     evsel(alias, selection, sel7, sel8, foundBC, foundFT0, foundFV0, foundFDD, foundZDC, 0);
   }
-  PROCESS_SWITCH(EventSelectionTask, processRun2, "Process Run2 event selection", true);
+  PROCESS_SWITCH(EventSelectionTask, processRun2, "Process Run2 event selection", false);
 
   Preslice<FullTracksIU> perCollision = aod::track::collisionId;
   void processRun3(aod::Collisions const& cols, FullTracksIU const& tracks, BCsWithBcSelsRun3 const& bcs, aod::FT0s const&)
